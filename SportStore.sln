@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SportStore", "SportStore\SportStore.csproj", "{31E7539B-BC3B-4061-850E-53B220CE6D48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SportStore", "SportStore\SportStore.csproj", "{31E7539B-BC3B-4061-850E-53B220CE6D48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PagingSortingTools", "PagingSortingTools\PagingSortingTools.csproj", "{C3EEA864-FDD6-45A9-B1CA-64DE8B3C5115}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBService", "DBService\DBService.csproj", "{2939DCC4-4593-4832-852F-2C6AC9EB1AF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{31E7539B-BC3B-4061-850E-53B220CE6D48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31E7539B-BC3B-4061-850E-53B220CE6D48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31E7539B-BC3B-4061-850E-53B220CE6D48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3EEA864-FDD6-45A9-B1CA-64DE8B3C5115}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3EEA864-FDD6-45A9-B1CA-64DE8B3C5115}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3EEA864-FDD6-45A9-B1CA-64DE8B3C5115}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3EEA864-FDD6-45A9-B1CA-64DE8B3C5115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2939DCC4-4593-4832-852F-2C6AC9EB1AF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2939DCC4-4593-4832-852F-2C6AC9EB1AF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2939DCC4-4593-4832-852F-2C6AC9EB1AF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2939DCC4-4593-4832-852F-2C6AC9EB1AF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
