@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DBService.Repositories
 {
-    interface ICategoryRepository
+    public interface ICategoryRepository
     {
         IEnumerable<Category> Categories { get; }
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DBService.Repositories
 {
-    interface IOrdersRepository
+    public interface IOrdersRepository
     {
         IEnumerable<Order> Orders { get; }
         Order GetOrder(long key);

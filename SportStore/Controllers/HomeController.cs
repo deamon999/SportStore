@@ -1,7 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DBService.Models;
+using DBService.Repositories;
+
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
+using PagingSortingTools;
+
 using SportStore.Models;
+using SportStore.ViewModels;
 
 using System;
 using System.Collections.Generic;
@@ -14,26 +20,46 @@ namespace SportStore.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IRepository repository;
+        private ICategoryRepository catRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IRepository repo, ICategoryRepository catRepo, ILogger<HomeController> logger)
         {
+            repository = repo;
+            catRepository = catRepo;
             _logger = logger;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(QueryOptions options)
         {
-            return View();
+            return View(repository.GetProducts(options));
         }
 
-        public IActionResult Privacy()
+        public IActionResult UpdateProduct(long key)
         {
-            return View();
+            ViewBag.Categories = catRepository.Categories;
+            return View(key == 0 ? new Product() : repository.GetProduct(key));
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpPost]
+        public IActionResult UpdateProduct(Product product)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (product.Id == 0)
+            {
+                repository.AddProduct(product);
+            }
+            else
+            {
+                repository.UpdateProduct(product);
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Product product)
+        {
+            repository.Delete(product);
+            return RedirectToAction(nameof(Index));
         }
     }
 }

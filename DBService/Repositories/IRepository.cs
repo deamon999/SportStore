@@ -8,7 +8,7 @@ using System.Text;
 
 namespace DBService.Repositories
 {
-    interface IRepository
+    public interface IRepository
     {
         IEnumerable<Product> Products { get; }
 
