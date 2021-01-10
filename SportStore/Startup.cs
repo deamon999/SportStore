@@ -55,10 +55,6 @@ namespace SportStore
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-            }
 
             app.UseStatusCodePages();
             app.UseStaticFiles();
